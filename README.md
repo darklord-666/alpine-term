@@ -14,6 +14,8 @@ on your own risk. Alpine Term comes with disk image file containing the
 software developed by third-parties. [Author](https://github.com/xeffyr)
 is not responsible for any damage that may affect your device or data.
 
+**Help page**: https://xeffyr.github.io/alpine-term/docs/help.html (available within app offline).
+
 ## System requirements
 
 In general, it should work on any high-end device which met the following
