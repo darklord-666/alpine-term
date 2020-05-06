@@ -7,14 +7,14 @@ distribution.
 *Inspired by [Termux](https://github.com/termux/termux-app) and
 [UserLAnd](https://github.com/CypherpunkArmory/UserLAnd) applications.*
 
+**Help page**: https://xeffyr.github.io/alpine-term/docs/help.html (available within app offline).
+
 <p align="center"><img src="help-page/img/demo_anim.gif" width="60%"></p>
 
 **Disclaimer**: by installing this software, you are agreeing to use it
 on your own risk. Alpine Term comes with disk image file containing the
 software developed by third-parties. [Author](https://github.com/xeffyr)
 is not responsible for any damage that may affect your device or data.
-
-**Help page**: https://xeffyr.github.io/alpine-term/docs/help.html (available within app offline).
 
 ## System requirements
 
