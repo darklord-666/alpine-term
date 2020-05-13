@@ -334,6 +334,7 @@ public class TerminalService extends Service implements SessionChangedCallback {
         // Basic audio support.
         processArgs.addAll(Arrays.asList("-audiodev", "none,id=audio0"));
         processArgs.addAll(Arrays.asList("-device", "intel-hda,id=intel-hda-pci0"));
+        processArgs.addAll(Arrays.asList("-device", "hda-output,id=hda-output0"));
         processArgs.addAll(Arrays.asList("-soundhw", "pcspk"));
 
         // Disable parallel port.
