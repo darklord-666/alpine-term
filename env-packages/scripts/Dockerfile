@@ -2,18 +2,19 @@
 #  docker build -t xeffyr/alpine-term-env-builder .
 # Push to docker hub with:
 #  docker push xeffyr/alpine-term-env-builder
-FROM ubuntu:18.10
+FROM ubuntu:20.04
 
 # Fix locale to avoid warnings:
 ENV LANG C.UTF-8
 
 # Install necessary packages.
-RUN DEBIAN_FRONTEND=noninteractive \
-    apt update && apt upgrade && \
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt update && apt upgrade && \
     apt install -yq --no-install-recommends \
     automake autopoint bison ca-certificates curl flex g++ \
-    git gettext gperf libglib2.0-dev libtool-bin m4 pkg-config \
-    python python3.7 sudo tar texinfo unzip xmlto zip
+    git gettext gperf libglib2.0-dev libtool-bin m4 make \
+    pkg-config patch python3.8 sudo tar texinfo unzip xmlto \
+    zip
 
 # Setup user.
 RUN adduser --disabled-password --shell /bin/bash --gecos "" builder && \
