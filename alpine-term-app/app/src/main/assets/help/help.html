@@ -5,34 +5,33 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Alpine Term</title>
-  <style>
+  <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -41,9 +40,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -341,9 +340,6 @@ page-break-after: avoid;
 }
 }
 </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -535,50 +531,50 @@ page-break-after: avoid;
 <li>Write changes.</li>
 </ol>
 <p>A transcript of ‘fdisk’ session for increasing root device size to 8 GiB:</p>
-<div class="sourceCode" id="fdisk-transcript" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="fdisk-transcript-1"><a href="#fdisk-transcript-1"></a>~ # fdisk /dev/sda</span>
-<span id="fdisk-transcript-2"><a href="#fdisk-transcript-2"></a></span>
-<span id="fdisk-transcript-3"><a href="#fdisk-transcript-3"></a>The number of cylinders for this disk is set to 3532045.</span>
-<span id="fdisk-transcript-4"><a href="#fdisk-transcript-4"></a>There is nothing wrong with that, but this is larger than 1024,</span>
-<span id="fdisk-transcript-5"><a href="#fdisk-transcript-5"></a>and could in certain setups cause problems with:</span>
-<span id="fdisk-transcript-6"><a href="#fdisk-transcript-6"></a>1) software that runs at boot time (e.g., old versions of LILO)</span>
-<span id="fdisk-transcript-7"><a href="#fdisk-transcript-7"></a>2) booting and partitioning software from other OSs</span>
-<span id="fdisk-transcript-8"><a href="#fdisk-transcript-8"></a>   (e.g., DOS FDISK, OS/2 FDISK)</span>
-<span id="fdisk-transcript-9"><a href="#fdisk-transcript-9"></a></span>
-<span id="fdisk-transcript-10"><a href="#fdisk-transcript-10"></a>Command (m for help): p</span>
-<span id="fdisk-transcript-11"><a href="#fdisk-transcript-11"></a>Disk /dev/sda: 128 GB, 137438953472 bytes, 268435456 sectors</span>
-<span id="fdisk-transcript-12"><a href="#fdisk-transcript-12"></a>3532045 cylinders, 76 heads, 1 sectors/track</span>
-<span id="fdisk-transcript-13"><a href="#fdisk-transcript-13"></a>Units: sectors of 1 * 512 = 512 bytes</span>
-<span id="fdisk-transcript-14"><a href="#fdisk-transcript-14"></a></span>
-<span id="fdisk-transcript-15"><a href="#fdisk-transcript-15"></a>Device  Boot StartCHS    EndCHS        StartLBA     EndLBA    Sectors  Size Id Type</span>
-<span id="fdisk-transcript-16"><a href="#fdisk-transcript-16"></a>/dev/sda1 *  0,32,33     522,75,1          2048    8390655    8388608 4096M 83 Linux</span>
-<span id="fdisk-transcript-17"><a href="#fdisk-transcript-17"></a></span>
-<span id="fdisk-transcript-18"><a href="#fdisk-transcript-18"></a>Command (m for help): d</span>
-<span id="fdisk-transcript-19"><a href="#fdisk-transcript-19"></a>Selected partition 1</span>
-<span id="fdisk-transcript-20"><a href="#fdisk-transcript-20"></a></span>
-<span id="fdisk-transcript-21"><a href="#fdisk-transcript-21"></a>Command (m for help): n</span>
-<span id="fdisk-transcript-22"><a href="#fdisk-transcript-22"></a>Partition type</span>
-<span id="fdisk-transcript-23"><a href="#fdisk-transcript-23"></a>   p   primary partition (1-4)</span>
-<span id="fdisk-transcript-24"><a href="#fdisk-transcript-24"></a>   e   extended</span>
-<span id="fdisk-transcript-25"><a href="#fdisk-transcript-25"></a>p</span>
-<span id="fdisk-transcript-26"><a href="#fdisk-transcript-26"></a>Partition number (1-4): 1</span>
-<span id="fdisk-transcript-27"><a href="#fdisk-transcript-27"></a>First sector (1-268435455, default 1): 2048</span>
-<span id="fdisk-transcript-28"><a href="#fdisk-transcript-28"></a>Last sector or +size{,K,M,G,T} (2048-268435455, default 268435455): +8G</span>
-<span id="fdisk-transcript-29"><a href="#fdisk-transcript-29"></a></span>
-<span id="fdisk-transcript-30"><a href="#fdisk-transcript-30"></a>Command (m for help): a</span>
-<span id="fdisk-transcript-31"><a href="#fdisk-transcript-31"></a>Partition number (1-4): 1</span>
-<span id="fdisk-transcript-32"><a href="#fdisk-transcript-32"></a></span>
-<span id="fdisk-transcript-33"><a href="#fdisk-transcript-33"></a>Command (m for help): p</span>
-<span id="fdisk-transcript-34"><a href="#fdisk-transcript-34"></a>Disk /dev/sda: 128 GB, 137438953472 bytes, 268435456 sectors</span>
-<span id="fdisk-transcript-35"><a href="#fdisk-transcript-35"></a>3532045 cylinders, 76 heads, 1 sectors/track</span>
-<span id="fdisk-transcript-36"><a href="#fdisk-transcript-36"></a>Units: sectors of 1 * 512 = 512 bytes</span>
-<span id="fdisk-transcript-37"><a href="#fdisk-transcript-37"></a></span>
-<span id="fdisk-transcript-38"><a href="#fdisk-transcript-38"></a>Device  Boot StartCHS    EndCHS        StartLBA     EndLBA    Sectors  Size Id Type</span>
-<span id="fdisk-transcript-39"><a href="#fdisk-transcript-39"></a>/dev/sda1 *  26,72,1     1023,75,1         2048   16779263   16777216 8192M 83 Linux</span>
-<span id="fdisk-transcript-40"><a href="#fdisk-transcript-40"></a></span>
-<span id="fdisk-transcript-41"><a href="#fdisk-transcript-41"></a>Command (m for help): w</span>
-<span id="fdisk-transcript-42"><a href="#fdisk-transcript-42"></a>The partition table has been altered.</span>
-<span id="fdisk-transcript-43"><a href="#fdisk-transcript-43"></a>Calling ioctl() to re-read partition table</span>
-<span id="fdisk-transcript-44"><a href="#fdisk-transcript-44"></a>fdisk: WARNING: rereading partition table failed, kernel still uses old table: Resource busy</span></code></pre></div>
+<div class="sourceCode" id="fdisk-transcript" data-startFrom="1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="fdisk-transcript-1" title="1">~ # fdisk /dev/sda</a>
+<a class="sourceLine" id="fdisk-transcript-2" title="2"></a>
+<a class="sourceLine" id="fdisk-transcript-3" title="3">The number of cylinders for this disk is set to 3532045.</a>
+<a class="sourceLine" id="fdisk-transcript-4" title="4">There is nothing wrong with that, but this is larger than 1024,</a>
+<a class="sourceLine" id="fdisk-transcript-5" title="5">and could in certain setups cause problems with:</a>
+<a class="sourceLine" id="fdisk-transcript-6" title="6">1) software that runs at boot time (e.g., old versions of LILO)</a>
+<a class="sourceLine" id="fdisk-transcript-7" title="7">2) booting and partitioning software from other OSs</a>
+<a class="sourceLine" id="fdisk-transcript-8" title="8">   (e.g., DOS FDISK, OS/2 FDISK)</a>
+<a class="sourceLine" id="fdisk-transcript-9" title="9"></a>
+<a class="sourceLine" id="fdisk-transcript-10" title="10">Command (m for help): p</a>
+<a class="sourceLine" id="fdisk-transcript-11" title="11">Disk /dev/sda: 128 GB, 137438953472 bytes, 268435456 sectors</a>
+<a class="sourceLine" id="fdisk-transcript-12" title="12">3532045 cylinders, 76 heads, 1 sectors/track</a>
+<a class="sourceLine" id="fdisk-transcript-13" title="13">Units: sectors of 1 * 512 = 512 bytes</a>
+<a class="sourceLine" id="fdisk-transcript-14" title="14"></a>
+<a class="sourceLine" id="fdisk-transcript-15" title="15">Device  Boot StartCHS    EndCHS        StartLBA     EndLBA    Sectors  Size Id Type</a>
+<a class="sourceLine" id="fdisk-transcript-16" title="16">/dev/sda1 *  0,32,33     522,75,1          2048    8390655    8388608 4096M 83 Linux</a>
+<a class="sourceLine" id="fdisk-transcript-17" title="17"></a>
+<a class="sourceLine" id="fdisk-transcript-18" title="18">Command (m for help): d</a>
+<a class="sourceLine" id="fdisk-transcript-19" title="19">Selected partition 1</a>
+<a class="sourceLine" id="fdisk-transcript-20" title="20"></a>
+<a class="sourceLine" id="fdisk-transcript-21" title="21">Command (m for help): n</a>
+<a class="sourceLine" id="fdisk-transcript-22" title="22">Partition type</a>
+<a class="sourceLine" id="fdisk-transcript-23" title="23">   p   primary partition (1-4)</a>
+<a class="sourceLine" id="fdisk-transcript-24" title="24">   e   extended</a>
+<a class="sourceLine" id="fdisk-transcript-25" title="25">p</a>
+<a class="sourceLine" id="fdisk-transcript-26" title="26">Partition number (1-4): 1</a>
+<a class="sourceLine" id="fdisk-transcript-27" title="27">First sector (1-268435455, default 1): 2048</a>
+<a class="sourceLine" id="fdisk-transcript-28" title="28">Last sector or +size{,K,M,G,T} (2048-268435455, default 268435455): +8G</a>
+<a class="sourceLine" id="fdisk-transcript-29" title="29"></a>
+<a class="sourceLine" id="fdisk-transcript-30" title="30">Command (m for help): a</a>
+<a class="sourceLine" id="fdisk-transcript-31" title="31">Partition number (1-4): 1</a>
+<a class="sourceLine" id="fdisk-transcript-32" title="32"></a>
+<a class="sourceLine" id="fdisk-transcript-33" title="33">Command (m for help): p</a>
+<a class="sourceLine" id="fdisk-transcript-34" title="34">Disk /dev/sda: 128 GB, 137438953472 bytes, 268435456 sectors</a>
+<a class="sourceLine" id="fdisk-transcript-35" title="35">3532045 cylinders, 76 heads, 1 sectors/track</a>
+<a class="sourceLine" id="fdisk-transcript-36" title="36">Units: sectors of 1 * 512 = 512 bytes</a>
+<a class="sourceLine" id="fdisk-transcript-37" title="37"></a>
+<a class="sourceLine" id="fdisk-transcript-38" title="38">Device  Boot StartCHS    EndCHS        StartLBA     EndLBA    Sectors  Size Id Type</a>
+<a class="sourceLine" id="fdisk-transcript-39" title="39">/dev/sda1 *  26,72,1     1023,75,1         2048   16779263   16777216 8192M 83 Linux</a>
+<a class="sourceLine" id="fdisk-transcript-40" title="40"></a>
+<a class="sourceLine" id="fdisk-transcript-41" title="41">Command (m for help): w</a>
+<a class="sourceLine" id="fdisk-transcript-42" title="42">The partition table has been altered.</a>
+<a class="sourceLine" id="fdisk-transcript-43" title="43">Calling ioctl() to re-read partition table</a>
+<a class="sourceLine" id="fdisk-transcript-44" title="44">fdisk: WARNING: rereading partition table failed, kernel still uses old table: Resource busy</a></code></pre></div>
 <p>After finishing with fdisk you need to reboot. Then you will be able to resize file system according to the new size of partition (requires package ‘e2fsprogs-extra’):</p>
 <pre><code>resize2fs /dev/sda1</code></pre>
 <p>EXT4 file system supports online resizing and reboot is not needed at this step.</p>
@@ -662,7 +658,7 @@ change vnc password</code></pre>
 </ol>
 <hr />
 <p style="text-align:center;">
-<font size="1dp"><i>Alpine Term by Leonid Plyushch (<span class="citation" data-cites="xeffyr">@xeffyr</span>)</i></font>
+<font size="1dp"><i>Alpine Term by Leonid Pliushch (<span class="citation" data-cites="xeffyr">@xeffyr</span>)</i></font>
 </p>
 </body>
 </html>
