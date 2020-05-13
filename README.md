@@ -1,13 +1,48 @@
 # Alpine Term
 
-This is a terminal emulator and a Linux environment application using
-the [QEMU](https://qemu.org) to run the [Alpine Linux](https://alpinelinux.org)
-distribution.
+An application that runs [Alpine Linux](https://alpinelinux.org) distribution on
+your Android device.
 
 *Inspired by [Termux](https://github.com/termux/termux-app) and
 [UserLAnd](https://github.com/CypherpunkArmory/UserLAnd) applications.*
 
-**Help page**: https://xeffyr.github.io/alpine-term/docs/help.html (available within app offline).
+## What is this app for ?
+
+This application is general purpose as it runs a full blown Linux distribution.
+You are limited only by amount of available packages (more than 10000) as Alpine
+Linux is relatively new distribution, however you can compile missing packages
+on your own. Performance can be a problem in some cases too.
+
+Here is just a few ideas for what you can use Alpine Term application:
+
+ - Educational purposes.
+
+ - Development environment: compile & test your programs written in C, C++, Go,
+   Python, etc... But remember that emulator performance is limited.
+
+ - Experimental sandbox: here you free for executing all kinds of potentially
+   dangerous stuff without being afraid of damaging your host OS.
+
+ - Run a local web server or TOR hidden service.
+
+ - Run x86 Linux programs on your ARM(64) device. Note that a Docker container
+   with Ubuntu may be required. Alpine Linux uses a Musl libc and programs compiled
+   for systems based on GNU libc may not work.
+
+ - Run software which requires root, but you don't want to root your device.
+
+**This application does not provide access to host hardware or operating system.**
+You cannot use it to root your device, flash custom ROMs, run Aircrack-NG, access
+USB OTG devices, etc...
+
+**This application is not a terminal emulator for Android OS.** If you searching for
+one, check [Termux](https://github.com/termux/termux-app/) project.
+
+A page with brief explanation about usage can be accessed through context menu
+inside application or you can view it online at this link: https://xeffyr.github.io/alpine-term/docs/help.html.
+
+Information about Alpine Linux tips and tricks can be accessed through its official
+Wiki: https://wiki.alpinelinux.org/wiki/Main_Page.
 
 <p align="center"><img src="help-page/img/demo_anim.gif" width="60%"></p>
 
@@ -27,49 +62,27 @@ requirements:
 ## Extra packages
 
 Check the https://github.com/xeffyr/alpine-extra-ports for some additional
-packages which may not be available in Alpine official repositories.
+packages which may not be available in Alpine official repositories. Mostly
+tuned for my needs.
 
 ## Consider this before opening a new [issue](https://github.com/xeffyr/alpine-term/issues)
 
-Bugs:
+**Bugs**:
 
- - Application is based on [Termux](https://github.com/termux/termux-app/)
-   project and shares many code parts. Therefore it can share same bugs too.
- 
- - Operating system ([Alpine Linux](https://alpinelinux.org/)) is configured
-   to use edge repository where software is at latest available version which
-   may be unstable. Do not report OS bugs to [this](https://github.com/xeffyr/alpine-term)
-   repository !
+ Consider opening an issue if you found that application crashes or not working
+ at all on your device. Note that app can have same bugs as [Termux](https://github.com/termux/termux-app/)
+ as many parts of code were borrowed from this project.
 
- - Alpine Linux uses [Musl](https://www.musl-libc.org/) libc which is not
-   compatible with GNU libc. Certian programs will not work here - do not
-   complain about that.
+ I do not accept any issues about packages or used operating system. They are
+ third-party projects not related to this application.
 
-Feature requests:
+**New features**:
 
- - Application will never support Android OS versions below 7.0.
+ Application is kept on bare minimum of features.
 
- - Application is designed to be minimal. It is mostly a text-based interface
-   to QEMU. If requested feature goes beyond that concept, it may be ignored.
-
- - Application is designed to run only Alpine Linux. Requests for support of
-   Ubuntu, Debian, Arch, whatever else will be ignored.
-
- - Emulator configuration is designed to be immutable and determined at compile-time
-   of the application. You can use QEMU monitor for some runtime tweaks. For
-   example to add a custom HDD image, create snapshot, backup, etc...
-
- - Application is configured to place OS image into private directory on internal
-   storage. This is done due to stability and privacy concerns.
-
- - External and shared storage support is limited. Emulator is configured only to use
-   application private directory located in user space, typically:
-   ```
-   /storage/emulated/0/Android/data/alpine.term/files
-   ```
-   Requests for full external/shared storage support will be ignored.
-
- - KVM support will never be enabled.
+ Most of things can be already done either through OS shell or QEMU monitor console,
+ for example backups to Android shared storage or custom drive images. I'm not
+ Android developer and won't bother to reimplement these things through GUI.
 
 ## Credits
 
